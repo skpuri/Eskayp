@@ -1,0 +1,13 @@
+{#/frameworkslist/(?P<pk>\d+)$#}
+{% extends "Layout.html" %}
+
+{% block content %}
+    <h2>{{ category }}</h2>
+    <br/>
+    {% for item in subcategory_list %}
+        <h5> <a href="/search/{{ item.id }}">{{ item.Name }}</a> </h5>
+    {% endfor %}
+    <br />
+    <br />
+    <a href = "{% url 'frameworkslist' %}">Back to list</a>
+{% endblock %}

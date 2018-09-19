@@ -1,0 +1,25 @@
+{% extends "Layout.html" %}
+
+{% block content %}
+    <h2>{{ searchresult.Name }}</h2>
+        <h4> </h4>
+        <h5>{{ searchresult.Description|safe|linebreaks }} </h5>
+    <br />
+    <br />
+   <a href = "{% url 'search' searchresult.subcategory.id %}">Back to {{ searchresult.subcategory.Name }} list</a> {# which is a subcategoryID's list#}
+{% endblock %}
+
+
+
+
+{#Update on vote Post#}
+{#class SearchDetailView(DetailView):#}
+{#    queryset = Author.objects.all() AUTOMATICALLY FILTERS BASED ON PK OF URL SLUG FOR DETAILVIEW#}
+    {#def get_object(self):#}
+    {#        # Call the superclass#}
+    {#        object = super(SearchDetailView, self).get_object()#}
+    {#        # Record the last accessed date#}
+    {#        object.last_accessed = timezone.now()#}
+    {#        object.save()#}
+    {#        # Return the object#}
+    {#        return object#}

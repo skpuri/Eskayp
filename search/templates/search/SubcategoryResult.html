@@ -1,0 +1,15 @@
+{#search/1#}
+
+{% extends "Layout.html" %}
+
+{% block content %}
+    <h3>{{ object_list.0.subcategory }}</h3>
+    {% for searchresult in subcategory_list %}
+        <h4><a href="{% url 'searchresult' searchresult.id %}">{{ searchresult.Name }}</a> </h4>
+        <h5> {{ searchresult.Description|safe|linebreaks }} </h5>
+    {% endfor %}
+    <br />
+    <br />
+
+   <a href = "{% url 'frameworkslist' object_list.0.subcategory.id %}">Back to Subcategory list</a> {# which is a categoryID's list#}
+{% endblock %}

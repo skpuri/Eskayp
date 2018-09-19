@@ -1,0 +1,19 @@
+{% extends "Layout.html" %}
+
+{% block content %}
+
+    {% for item in category_list %} <!-- >object_list is autopopulated by django<-->
+        {% url 'frameworkslist' item.id as listurl %}
+        <h5>
+            <a href="{{ listurl }}">{{ item.Name }}
+                {% if item.HasSubcategory %}
+                    <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+                {% endif %}
+            </a>
+        </h5> <!-- >
+{#        {% if item has a subccategory %}#}
+{#              tab in and show those!#}
+{#        {% endif %}#}
+    {% endfor %}
+
+{% endblock %}

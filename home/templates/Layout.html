@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>eskayp - Discover popular Technologies (Frameworks, libraries, and other tools) that are used today!</title>
+	<meta charset="utf-8" />
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{#% static 'css/bootstrap.min.css' %#}" type="text/css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <link rel = "stylesheet" href = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+{#    TODO: load local files to client#}
+{#    <script src="Frameworks/jQuery.min.js"></script>#}
+{#    <script src="myframework.js"></script>#}
+    <meta name="viewport" content = "width=device-width, initial-scale=1.0">
+
+	<style type="text/css">
+		html,
+		body {
+		  height:100%
+		}
+	</style>
+</head>
+
+<body class="body" style="background-color:#f6f6f6">
+    <header class="bs-docs-nav navbar navbar-static-top" id="top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <!--I think this stuff might be for phone responsiveness?-->
+                <!--button aria-controls="bs-navbar" aria-expanded="false" class="collapsed navbar-toggle" data-target="#bs-navbar" data-toggle="collapse" type="button">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span> <span class="icon-bar"></span>
+                </button-->
+                <a href="../" class="navbar-brand">eskayp</a>
+            </div>
+            <nav class="collapse navbar-collapse" id="bs-navbar">
+                <ul class="nav navbar-nav">
+                    <li> <a href="../how-to-use/">How to use</a> </li>
+                    <li> <a href="../frameworkslist/">Frameworks List</a> </li>
+                </ul>
+                <ul class="nav navbar-right">
+                    <li><a href="/Profile/" onclick="">My Profile</a></li>
+                    <!--<li><a href="http://blog.getbootstrap.com" onclick="ga(&quot;send&quot;,&quot;event&quot;,&quot;Navbar&quot;,&quot;Community links&quot;,&quot;Blog&quot;)">Blog</a></li>-->
+                </ul>
+            </nav>
+        </div>
+    </header>
+	<div class="container-fluid" style="min-height:85%;">
+	   {% block content %}
+	   {% endblock %}
+	</div>
+</body>
+<footer>
+    <div class="container-fluid" style='margin-left:15px'>
+        <p><a href="contact/" target="blank">Contact</a> | <a href="#" target="blank">LinkedIn</a> | <a href="#" target="blank">Twitter</a> | <a href="#" target="blank">Google+</a></p>
+    </div>
+</footer>
+
+</html>
